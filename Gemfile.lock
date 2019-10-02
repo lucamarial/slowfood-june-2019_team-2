@@ -47,6 +47,8 @@ GEM
     archive-zip (0.12.0)
       io-like (~> 0.3.0)
     arel (9.0.0)
+    autoprefixer-rails (9.6.1.1)
+      execjs
     backports (3.15.0)
     bindex (0.8.1)
     bootsnap (1.4.5)
@@ -67,6 +69,7 @@ GEM
       archive-zip (~> 0.10)
       nokogiri (~> 1.8)
     coderay (1.1.2)
+    commonjs (0.2.7)
     concurrent-ruby (1.1.5)
     coveralls (0.8.23)
       json (>= 1.8, < 3)
@@ -130,6 +133,12 @@ GEM
       concurrent-ruby (~> 1.0)
     io-like (0.3.0)
     json (2.2.0)
+    less (2.6.0)
+      commonjs (~> 0.2.7)
+    less-rails (4.0.0)
+      actionpack (>= 4)
+      less (~> 2.6.0)
+      sprockets (>= 2)
     listen (3.1.5)
       rb-fsevent (~> 0.9, >= 0.9.4)
       rb-inotify (~> 0.9, >= 0.9.7)
@@ -233,6 +242,9 @@ GEM
     selenium-webdriver (3.142.5)
       childprocess (>= 0.5, < 3.0)
       rubyzip (>= 1.2.2)
+    semantic-ui-rails (0.18.0)
+      autoprefixer-rails
+      less-rails
     sexp_processor (4.13.0)
     shoulda-matchers (4.1.2)
       activesupport (>= 4.2.0)
@@ -298,6 +310,7 @@ DEPENDENCIES
   rspec-rails
   sass-rails (~> 5.0)
   selenium-webdriver
+  semantic-ui-rails
   shoulda-matchers
   spring
   spring-watcher-listen (~> 2.0.0)
