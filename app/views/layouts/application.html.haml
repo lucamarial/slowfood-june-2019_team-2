@@ -7,4 +7,12 @@
     = stylesheet_link_tag    'application', media: 'all', data: {'turbolinks-track' => 'reload'}
     = javascript_include_tag 'application', data: {'turbolinks-track' => 'reload'}
   %body
+    %main
+    %header
+      %nav
+        #left
+          %p#name Better than next door
+        #center
+        #right
+          %button#login_button Login
     = yield
