@@ -1,7 +1,0 @@
-When("I'm on the landing page") do
-  visit root_path
-end
-
-Then("I should see {string} button") do |element|
-  expect(page).to have_content element
-end
