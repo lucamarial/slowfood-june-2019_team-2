@@ -6,16 +6,13 @@
     = csrf_meta_tags
     = stylesheet_link_tag    'application', media: 'all', data: {'turbolinks-track' => 'reload'}
     = javascript_include_tag 'application', data: {'turbolinks-track' => 'reload'}
-    %link{:href => "https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css", :rel => "stylesheet"}/
   %body
-    .ui.secondary.menu
-      %a.item#nav-logo
-        %i.utensils.icon
-      .right.menu
-        .item
-          .ui.icon.input
-            %input{:placeholder => "Search...", :type => "text"}/
-            %i.search.link.icon
-        %a.ui.item
-          Login
+    %main
+    %header
+      %nav
+        #left
+          %p#name Better than next door
+        #center
+        #right
+          %button#login_button Login
     = yield
