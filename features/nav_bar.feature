@@ -4,5 +4,5 @@ Feature: Visitor can view navigation bar
   I would like to use a navbar
 
   Scenario: Viewing a nav bar with a log in bar
-    When I'm on the landing page
+    Given I'm on the landing page
     Then I should see "Login" button
