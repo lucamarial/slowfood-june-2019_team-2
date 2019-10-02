@@ -1,10 +1,10 @@
-Feature: User sign up
+Feature: Admin sign up
   As a restaurant owner,
   In order to make updates to my restaurant page
   I would like to be able to sign up
 
   Background:
-    Given following user exist
+    Given following admin exist
       | email            | password |
       | duhast@email.de  | password |
     And I am on the "sign in" page

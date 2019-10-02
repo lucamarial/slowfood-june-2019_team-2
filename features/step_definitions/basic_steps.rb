@@ -4,7 +4,7 @@ Given("the following product exist") do |table|
   end
 end
 
-Given("following user exist") do |table|
+Given("following admin exist") do |table|
   table.hashes.each do |table|
     FactoryBot.create(:admin, table)
   end
