@@ -1,47 +1,49 @@
-Feature: User login for the application
-    As a User
-    In order to be able to buy some tasty meals
-    I must be able to login to the application
+Feature: Admin log in
+  As a restaurant owner,
+  In order to make updates to my restaurant page
+  I would like to be able to log in and access my restaurant page
 
-		Background:
-				Given following user exist
-					|email					|password|
-					|trott@mail.com	|12345678|
-				And I visit the "landing" page
+  Background:
+    Given following user exist
+      | email            | password |
+      | duhast@email.de  | password |
+    And I am on the "sign in" page
 
-		Scenario: User should be able to login [Happy Path]
-				And I click "Login" link
-				And I fill in "Email" with "trott@mail.com"
-				And I fill in "Password" with "12345678"
-				And I click "Log in" button
-				Then I should see "Signed in successfully."
+  Scenario: Log in [Happy Path]
+    When I fill in "Email" with "duhast@email.com"
+    And I fill in "Password" with "password"
+    And I click "Log in" button
+    Then I'm on the landing page
 
-		Scenario: User should be able to Sign up [Happy Path]
-				And I click "Sign up" link
-				And I fill in "Email" with "newuser@mail.com"
-				And I fill in "Password" with "12345678"
-				And I fill in "Password confirmation" with "12345678"
-				And I click "Sign up" button
-				Then I should see "Welcome! You have signed up successfully."
+		Scenario: Sign up [Happy Path]
+    When I fill in "Email" with "ich@email.com"
+    And I fill in "Password" with "password"
+    And I fill in "Password confirmation" with "password"
+    And I click "Sign up" button
+    Then I'm on the landing page
+  
+  Scenario: User doesn't fill out forms [Sad Path]
+    When I click "Sign up" button
+    And I should see "Email can't be blank"
+    And I should see "Password can't be blank"
 
-		Scenario: User can't sign up with already in use email [Sad Path]
-				And I click "Sign up" link
-				And I fill in "Email" with "trott@mail.com"
-				And I fill in "Password" with "87654321"
-				And I fill in "Password confirmation" with "87654321"
-				And I click "Sign up" button
-				Then I should see "Email has already been taken"
+  Scenario: User passes in password which is too short [Sad Path]
+    When I fill in "Email" with "ich@email.de"
+    And I fill in "Password" with "p"
+    And I fill in "Password confirmation" with "p"
+    And I click "Sign up" button
+    Then I should see "Password is too short (minimum is 6 characters)"
 
-		Scenario: User need to enter correct email [Sad Path]
-				And I click "Login" link
-				And I fill in "Email" with "ross@mail.com"
-				And I fill in "Password" with "12345678"
-				And I click "Log in" button
-				Then I should see "Invalid Email or password."
+  Scenario: User fills in non matching passwords [Sad Path]
+    When I fill in "Email" with "ich@email.de"
+    And I fill in "Password" with "password"
+    And I fill in "Password" with "passwords"
+    And I click "Sign up" button
+    Then I should see "Password confirmation doesn't match Password"
 
-		Scenario: User need to enter correct password [Sad Path]
-				And I click "Login" link
-				And I fill in "Email" with "trott@mail.com"
-				And I fill in "Password" with "87654321"
-				And I click "Log in" button
-				Then I should see "Invalid Email or password."
+  Scenario: User can't sign up with used email [Sad Path]
+    When I fill in "Email" with "duhast@email.de"
+    And I fill in "Password" with "password"
+    And I fill in "Password" with "password"
+    And I click "Sign up" button
+    Then I should see "Email has already been taken"
