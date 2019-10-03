@@ -1,6 +1,6 @@
 %h1 Products List
 %ul
-  - @category.each do |category|
+  - @categories.each do |category|
     %h2= category.title
     - category.products.each do |product|
       %li
