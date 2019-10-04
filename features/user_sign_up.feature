@@ -9,7 +9,6 @@ Feature: User sign up
       | duhast@email.de  | password |
     And I am on the "sign in" page
     And I click "Sign up" button
-    Then I should be on the "sign up" page
 
   Scenario: Sign up [Happy Path]
     When I fill in "Email" with "ich@email.com"
