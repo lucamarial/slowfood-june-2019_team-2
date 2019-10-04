@@ -1,8 +1,9 @@
-%h1 Products List
+%h1 The Menu
 %ul
-  - @products.each do |product|
-    %li
-      = product.title
-      %br/
-      = product.content
-      = product.price
+  - @categories.each do |category|
+    %h2= category.title
+    - category.products.each do |product|
+      %li
+        = product.title
+        = product.content
+        = product.price
