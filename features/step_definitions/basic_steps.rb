@@ -25,7 +25,3 @@ end
 When("I fill in {string} with {string}") do |string, string2|
   fill_in string, with: string2  
 end
-
-Then("I should be on the {string} page") do |string|
-  visit new_user_registration_path
-end
