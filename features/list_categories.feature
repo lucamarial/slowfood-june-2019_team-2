@@ -4,11 +4,6 @@ Feature: Visitor views list of categorized products
   I would like to see the products sorted in categories
 
   Background:
-    Given the following categories exist
-      | title    |
-      | Starters |
-      | Entrees  |
-      | Desserts | 
     Given the following products exist
       | title              | content                     | price | category  |
       | Swedish meatballs  | ground beef, parsley, gravy | 30    | Entrees   |
