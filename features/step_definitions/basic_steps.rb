@@ -24,4 +24,12 @@ end
 
 When("I fill in {string} with {string}") do |string, string2|
   fill_in string, with: string2  
+end 
+
+Given("the following products exist") do |table|
+  table.hashes.each do |product|
+    category = Category.find_or_create_by(title: product[:category])
+    product.except!('category')
+    FactoryBot.create( :product, product.merge(category: category))
+  end
 end
