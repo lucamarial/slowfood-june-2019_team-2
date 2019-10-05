@@ -13,3 +13,11 @@ Given("the following products exist") do |table|
     FactoryBot.create( :product, product.merge(category: category))
   end
 end
+
+When("I click {string} on {string}") do |element, product_name|
+  pending # Write code here that turns the phrase above into concrete actions
+end
+
+Then("I should see {string}") do |string|
+  pending # Write code here that turns the phrase above into concrete actions
+end
