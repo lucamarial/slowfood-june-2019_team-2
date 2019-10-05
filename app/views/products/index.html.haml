@@ -3,7 +3,9 @@
   - @categories.each do |category|
     %h2= category.title
     - category.products.each do |product|
-      %li
-        = product.title
-        = product.content
-        = product.price
+      .div{id: dom_id(product)}
+        %table
+          %td= product.title
+          %td= product.content
+          %td= product.price
+          %td= add_to_cart(product, 1, 'Add to cart')
