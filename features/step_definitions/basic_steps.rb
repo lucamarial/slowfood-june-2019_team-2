@@ -15,9 +15,8 @@ Given("the following products exist") do |table|
 end
 
 When("I click {string} on {string}") do |element, product_name|
-  pending # Write code here that turns the phrase above into concrete actions
-end
-
-Then("I should see {string}") do |string|
-  pending # Write code here that turns the phrase above into concrete actions
+  product = Product.find_by_name(product_name)
+  within("#product_#{product.id}") do
+    click_on element
+  end
 end
