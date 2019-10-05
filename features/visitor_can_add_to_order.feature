@@ -1,3 +1,4 @@
+@javascript
 Feature: Visitor can add to order
 
   As a visitor,
