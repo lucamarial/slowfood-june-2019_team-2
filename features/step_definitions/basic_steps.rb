@@ -15,7 +15,7 @@ Given("the following products exist") do |table|
 end
 
 When("I click {string} on {string}") do |element, product_name|
-  product = Product.find_by_name(product_name)
+  product = Product.find_by_title(product_name)
   within("#product_#{product.id}") do
     click_on element
   end

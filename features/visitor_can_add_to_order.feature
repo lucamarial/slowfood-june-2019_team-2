@@ -14,5 +14,5 @@ Feature: Visitor can add to order
     And I'm on the landing page
 
   Scenario: Visitor can add products to cart
-    When I click 'Add to cart' on "Salad"
+    When I click "Add to cart" on "Salad"
     Then I should see "1 item"
