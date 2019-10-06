@@ -1,3 +1,4 @@
+@Javascript
 Feature: Restaurant owner can add to menu
   As a restaurant owner,
   In order to keep my customers up to date regarding my products
@@ -10,9 +11,8 @@ Feature: Restaurant owner can add to menu
       | Apple pie          | apples, cinnamon, sugar     | 20    | Desserts  |
       | Salad              | tomatoes, leafs             | 10    | Starters  |
     And the following user exists
-      | name | email         | password    | admin |
-      | Adam | adam@mail.com | password123 | true  |
-
+      | email         | password    |
+      | adam@mail.com | password123 |
     And I'm on the landing page
     And I click "Login"
     And I fill in "Email" with "adam@mail.com"
