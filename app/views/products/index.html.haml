@@ -9,4 +9,6 @@
           %td= product.content
           %td= product.price
           %td= add_to_cart(product, 1, 'Add to cart')
+          %td= link_to "New Product", new_product_path
           %td= link_to 'Edit', edit_product_path(product)
+          %td= link_to 'Delete', product_path(product), method: :delete, data: { confirm: 'But why?' }
