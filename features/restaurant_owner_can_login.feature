@@ -19,3 +19,10 @@ Feature: Restaurant owner can login
     And I fill in "Password" with "password"
     And I click "Log in" button
     Then I should see "Edit"
+
+  Scenario: User logs in [Sad Path]
+    When I click "Login" button
+    And I fill in "Email" with "duhast@email.de"
+    And I fill in "Password" with "password"
+    And I click "Log in" button
+    Then I should not see "Edit"
