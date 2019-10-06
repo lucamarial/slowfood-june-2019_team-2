@@ -1,7 +1,3 @@
-Given("I click {string} button") do |string|
- click_on string
-end
-
 When("I'm on the landing page") do
   visit root_path
 end
@@ -36,6 +32,7 @@ And("I fill in {string} with {string}") do |string, string2|
 end
 
 When("I click {string}") do |string|
+  click_on string
 end
 
 When("I choose {string}") do |string|
