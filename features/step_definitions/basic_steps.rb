@@ -1,7 +1,3 @@
-Given("I click {string} button") do |string|
- click_on string
-end
-
 When("I'm on the landing page") do
   visit root_path
 end
@@ -27,10 +23,23 @@ When("I click {string} on {string}") do |element, product_name|
   end
 end
 
-When("I fill in {string} with {string}") do |string, string2|
-  fill_in string, with: string2  
-end 
+And ("the following user exists") do |table|
+  table.hashes.each do |table|
+    FactoryBot.create(:user, table)
+  end
+end
 
-Then("I should not see {string}") do |string|
-  pending # Write code here that turns the phrase above into concrete actions
+And("I am on the landing page") do
+  visit root_path
+end
+
+And("I fill in {string} with {string}") do |string, string2|
+  fill_in string, with: string2
+end
+
+When("I click {string}") do |string|
+  click_on string
+end
+
+When("I choose {string}") do |string|
 end
